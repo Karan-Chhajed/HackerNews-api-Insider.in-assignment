@@ -1,42 +1,9 @@
-# HackerNews-api-Insider.in-assignment
-A take on Paytm Insider.in assignment
+# Hacker News API assignment By Paytm Insider.in
+A take on Paytm Insider.in assignment. Target is to get the JSON data from Hacker News API and set it us a backend for the client
 
-##Requirements and Dependencies
+## Requirements and Dependencies
 
-You will Node package manager like npm or yarn installed.
-
-- #### Node installation on Windows
-
-  Just go on [official Node.js website](https://nodejs.org/) and download the installer.
-Also, be sure to have `git` available in your PATH, `npm` might need it (You can find git [here](https://git-scm.com/)).
-
-- #### Node installation on Ubuntu
-
-  You can install nodejs and npm easily with apt install, just run the following commands.
-
-      $ sudo apt install nodejs
-      $ sudo apt install npm
-
-- #### Other Operating Systems
-  You can find more information about the installation on the [official Node.js website](https://nodejs.org/) and the [official NPM website](https://npmjs.org/).
-
-If the installation was successful, you should be able to run the following command.
-
-    $ node --version
-    v8.11.3
-
-    $ npm --version
-    6.1.0
-
-If you need to update `npm`, you can make it using `npm`! Cool right? After running the following command, just open again the command line and be happy.
-
-    $ npm install npm -g
-
-###
-### Yarn installation
-  After installing node, this project will need yarn too, so just run the following command.
-
-      $ npm install -g yarn
+You will require Node package manager like npm or yarn installed.
       
  ### Dependencies
  
@@ -45,20 +12,40 @@ If you need to update `npm`, you can make it using `npm`! Cool right? After runn
   express
   
   
-  ### To use the docker 
+  ### To use the docker / Start the server
   
   Get in the root folder and run
   
     $ docker-compose build
     $ docker-compose up
+    
+### File Structure
+
+Project---
+     redis-
+        redisclient.js ---- (Sets redis client)
+        cache-middleware-topstories.js ---- (cache middleware for holding top stories) 
+     routes/api-
+        past-stories.js ---- (sends the stories previosly fetched to past-stories route)
+        top-stories ---- (gets and sends top 10 stories sorted by score, single story for an ID, top 10 comments sorted by the number of child comments and child                           comments in a JSON object)
+     utils - (utilitsy modules which can re used)
+        getNestedComments.js ---- (gets the inner branch of comments)
+        hnAgeFinder.js ---- (Finds the age of User in years, when username is passed)
+        sorter.js ---- (sorts the given stream of data. Its a custom sort, sorts on the basis of given arguments passed and the method called)
+        requestWithMap.js ---- ( Calls axios.get over an array of ids)
+        
+     docker-compose.yml ---- (docker compose file)
+     Dockerfile ---- (Docker File)
+     
+     server.js ---- main server file, has the server setup
 
 ### What you will see
 
-##### /top-stories - top 10 stories sorted by their score
+  ##### /top-stories - top 10 stories sorted by their score
 
-##### /top-stories/:story_id - story details of one selected story
+  ##### /top-stories/:story_id - story details of one selected story
 
-##### ./top-stories/:story_id/comments - Story and its comments sorted by the number of child comments and also the child components
+  ##### ./top-stories/:story_id/comments - Story and its comments sorted by the number of child comments and also the child components
 
 
 
