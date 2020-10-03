@@ -11,7 +11,7 @@ const ageFinder =async (userName) => {
         if(today.getMonth() < month || (today.getMonth() == month && today.getDate() < day)) {
             hnAge--;
         }
-        return hnAge/365
+        return (hnAge/365).toFixed(2)
     } catch(err) {
         console.log(err.message)
         }

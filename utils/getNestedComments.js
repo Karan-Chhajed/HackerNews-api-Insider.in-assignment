@@ -11,7 +11,7 @@ const getNestedComments = async (targetArray) => {
         const replies = await requestWithMap(objectArray.kids)          //get the data of in-nest comments        
         let commentJsonObject = {
             by: objectArray.by,
-            hnAge: hnAge,
+            hnAgeInYears: hnAge,
             text: objectArray.text,
             replies: replies,                                            //JSON object which will act as sub comments response for the selected story
         }

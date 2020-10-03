@@ -85,7 +85,7 @@ router.get('/:story_id/comments', async (req, res) => {
                 score: parentData.data.score,
                 timeOfSubmission: parentData.data.time,
                 by: parentData.data.by,
-                date:await ageFinder(parentData.data.by),
+                hnAgeInYears:await ageFinder(parentData.data.by),
                 comments: sortedNestedComments,
                 
                 }
