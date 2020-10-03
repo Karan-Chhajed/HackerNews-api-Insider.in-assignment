@@ -1,6 +1,6 @@
 
 const ageFinder = require('./hnAgefinder')
-const requestWithMap = require('./arrayMapper')
+const requestWithMap = require('./requestWithMap')
 
 const getNestedComments = async (targetArray) => {
     let nestedCommentsResponse = []
