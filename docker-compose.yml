@@ -1,0 +1,17 @@
+
+version: '3'
+
+services:
+  redis:
+    image: redis
+    container_name: cache
+    expose:
+      - 6379
+
+  hackernews:
+    build: ./
+    volumes:
+      - ./hackerNews:/src/hackerNews
+    ports:
+      - "5000:5000"
+    restart: always

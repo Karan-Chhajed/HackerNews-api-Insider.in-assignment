@@ -1,0 +1,25 @@
+{
+  "name": "hackernews",
+  "version": "1.0.0",
+  "description": "hackernews API consumer",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server",
+    "server": "nodemon server",
+    "client": "npm start --prefix client"
+  },
+  "author": "Karan Chhajed",
+  "license": "ISC",
+  "devDependencies": {
+    "concurrently": "^5.3.0",
+    "nodemon": "^2.0.4"
+  },
+  "dependencies": {
+    "axios": "^0.20.0",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "react": "^16.13.1",
+    "redis": "^3.0.2",
+    "rxjs": "^6.6.3"
+  }
+}
